@@ -6,6 +6,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 
 const app = express();
+app.use(express.static(__dirname + '/views'))
 
 // Passport Config
 require('./config/passport')(passport);

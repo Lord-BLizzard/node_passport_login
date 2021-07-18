@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+body {
+  background-color: white;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.login-container {
+  position: relative;
+  height: 75vh;
+  width: 50%;
+  background-image: url('/img/background.jpg');
+  margin: 9.5vh 25%;
+  border-radius: 5%;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.login-form {
+  position: absolute;
+  left: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+  justify-content: center;
+  background-color: rgb(250, 189, 76);
+  transition: all 1s;
+  z-index: 1;
+}
+
+.login-forgot-pass {
+  width: 100%;
+}
+.login-form h2 {
+  color: white;
+}
+
+.login-form label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+}
+.login-form label span {
+  color: gray;
+}
+.login-form label input {
+  border: none;
+  width: 60%;
+  background-color: rgb(250, 189, 76);
+  border-bottom: yellow solid 2px;
+  outline: none;
+  text-align: center;
+}
+.login-form button {
+  background-color: cyan;
+}
+.login-form button:hover {
+  background-color: rgb(2, 190, 190);
+}
+
+.slider {
+  position: absolute;
+  left: 60%;
+  height: 100%;
+  width: 40%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 1s;
+  z-index: 0;
+}
+
+.slider button {
+  margin: 35px;
+  width: 50%;
+  border: none;
+  min-height: 6vh;
+  border-radius: 10px;
+  background-color: cyan;
+}
+.slider button:hover {
+  background-color: rgb(2, 190, 190);
+}
+
+#reg {
+  border: 1px solid cyan;
+  background-color: cyan;
+}
+
+#reg:hover {
+  background-color: rgb(2, 190, 190);
+  border: 1px solid rgb(2, 190, 190);
+}
+
+#check {
+  /* display: hidden;*/
+  visibility: hidden;
+  height: 0;
+}
+
+#nav {
+  background-color: cyan;
+}
+
+.slider-teachers {
+  left: 0%;
+}
+.login-form-teachers {
+  left: 40%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+@media (max-width: 580px) {
+  .login-container {
+    width: 100%;
+    height: 92vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .login-form {
+    top: 30%;
+    width: 100%;
+    height: 70%;
+  }
+  .login-forgot-pass {
+    top: 0;
+    height: 100%;
+  }
+  .slider {
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 30%;
+  }
+  .slider-teachers {
+    top: 70%;
+  }
+  .login-form-teachers {
+    left: 0;
+    top: 0%;
+  }
+}
