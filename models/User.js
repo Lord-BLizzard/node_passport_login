@@ -18,9 +18,9 @@ const UserSchema = new mongoose.Schema({
     default: Date.now
   },
   checkbox: {
-    type: Boolean,
+    type: Number,
     required: true
-  }
+  },
 });
 
 const User = mongoose.model('User', UserSchema);

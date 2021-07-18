@@ -18,7 +18,7 @@ body {
 
 .login-container {
   position: relative;
-  height: 75vh;
+  height: 80vh;
   width: 50%;
   background-image: url('img/background.jpg');
   margin: 9.5vh 25%;
@@ -111,10 +111,17 @@ body {
   border: 1px solid rgb(2, 190, 190);
 }
 
-#check {
-  /* display: hidden;*/
+.check {
+  margin: 0;
+  padding: 0;
+  /* display: inline-block; */
   visibility: hidden;
-  height: 0;
+  /* height: 0; */
+}
+
+#form {
+  padding: 0;
+  margin: 0;
 }
 
 #nav {
