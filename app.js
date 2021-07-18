@@ -1,5 +1,5 @@
 const express = require('express');
-const expressLayouts = require('express-ejs-layouts');
+// const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
@@ -23,7 +23,7 @@ mongoose.connect(
   .catch(err => console.log(err));
 
 // EJS
-app.use(expressLayouts);
+// app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 // Express body parser

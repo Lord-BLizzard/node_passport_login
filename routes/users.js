@@ -14,7 +14,7 @@ router.get('/register', forwardAuthenticated, (req, res) => res.render('register
 
 // Register
 router.post('/register', (req, res) => {
-  const { name, email, password, password2 } = req.body;
+  const { name, email, password, password2, checkbox } = req.body;
   let errors = [];
 
   if (!name || !email || !password || !password2) {
@@ -35,7 +35,8 @@ router.post('/register', (req, res) => {
       name,
       email,
       password,
-      password2
+      password2,
+      checkbox
     });
   } else {
     User.findOne({ email: email }).then(user => {
@@ -46,13 +47,15 @@ router.post('/register', (req, res) => {
           name,
           email,
           password,
-          password2
+          password2,
+          checkbox
         });
       } else {
         const newUser = new User({
           name,
           email,
-          password
+          password,
+          checkbox
         });
 
         bcrypt.genSalt(10, (err, salt) => {

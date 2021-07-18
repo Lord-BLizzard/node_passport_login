@@ -7,15 +7,20 @@
 }
 
 body {
-  background-color: white;
+  /* background-color: white; */
   font-family: 'Nunito Sans', sans-serif;
+  width: 100% !important;
 }
+
+/* .full-body {
+  background-color: red;
+} */
 
 .login-container {
   position: relative;
   height: 75vh;
   width: 50%;
-  background-image: url('/img/background.jpg');
+  background-image: url('img/background.jpg');
   margin: 9.5vh 25%;
   border-radius: 5%;
   overflow: hidden;
