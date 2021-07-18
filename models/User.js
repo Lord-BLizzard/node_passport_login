@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
     default: Date.now
   },
   checkbox: {
-    type: Number,
+    type: String,
     required: true
   },
 });

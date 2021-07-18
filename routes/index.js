@@ -9,43 +9,46 @@ const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 // Welcome Page
 router.get('/', forwardAuthenticated, (req, res) => res.render('login'));
 
-router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
+// router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
 
 router.post('/register', (req, res) => {
-  const { name, email, password, password2, checkbox } = req.body;
+  console.log(req.body)
+  const { name, email, password, checkbox } = req.body;
   let errors = [];
 
-  if (!name || !email || !password || !password2) {
+  if (!name || !email || !password) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
-  if (password != password2) {
-    errors.push({ msg: 'Passwords do not match' });
-  }
+  // if (password != password2) {
+  //   errors.push({ msg: 'Passwords do not match' });
+  // }
+
+  // if (email.indexOf('goa.bits-pilani.ac.in')) {
+  //   errors.push({ msg: 'Please enter your official email id' });
+  // }
 
   if (password.length < 6) {
     errors.push({ msg: 'Password must be at least 6 characters' });
   }
 
   if (errors.length > 0) {
-    res.render('register', {
+    res.render('login', {
       errors,
       name,
       email,
       password,
-      password2,
       checkbox
     });
   } else {
     User.findOne({ email: email }).then(user => {
       if (user) {
         errors.push({ msg: 'Email already exists' });
-        res.render('register', {
+        res.render('login', {
           errors,
           name,
           email,
           password,
-          password2,
           checkbox
         });
       } else {
@@ -99,7 +102,7 @@ router.get('/logout', (req, res) => {
 router.get('/dashboard', ensureAuthenticated, (req, res) =>
 {
   console.log(req.user)
-  if (req.user.checkbox === 1) {
+  if (req.user.checkbox === 'student') {
     res.render('studentdashboard', {
     user: req.user
     })
